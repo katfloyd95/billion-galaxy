@@ -34,14 +34,22 @@
             </div>
           </div>
 
-          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          <div class="grid grid--half-gutters">
+            <div class="grid__item medium-up--one-half">
+              <label for="{{ formId }}-business-name">{{'customizations.wholesale.business_name' | t }}</label>
+              <input type="text" id="{{ formId }}-business-name">
+            </div>
+            <div class="grid__item medium-up--one-half">
+              <label for="{{ formId }}-website-name">{{'customizations.wholesale.website' | t }}</label>
+              <input type="text" id="{{ formId }}-website-name">
+            </div>
+          </div>
 
           {% unless section.settings.business-types == blank %}
 
           {% assign business-types = section.settings.business-types | split: ',' %}
 
-          <label for = "{{ formId }}-typeOfBusiness">Type of Business</label>
+          <label for = "{{ formId }}-typeOfBusiness">{{'customizations.wholesale.business_type' | t }}</label>
           <select id = "{{ formId }}-typeOfBusiness" name = "contact[Type of Business]">
             
             {% for type in business-types %}
@@ -51,6 +59,9 @@
           </select>
 
           {% endunless %}
+
+          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
           <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
           <textarea rows="10" id="{{ formId }}-message" name="contact[{{ 'contact.form.message' | t }}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
