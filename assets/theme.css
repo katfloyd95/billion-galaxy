@@ -72,6 +72,50 @@
     and slick-theme.scss (at Slick Slider Theme). Upgrade each area individually.
   - Remove `outline: none` from `.slick-dots li button`
 ==============================================================================*/
+
+.sale-price-tag {
+  background-color: red;
+  color: white;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.radio-buttons-2 {
+  display: flex;
+  align-items: center;
+}
+
+.radio-buttons-2 label {
+  padding-left: 5px;
+}
+
+.quantity-1 {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-1 label {
+  margin-left: 5px;
+}
+
+.quantity-2 {
+  display: flex;
+  align-items: center;
+  width: 400px;
+}
+
+.quantity-2 label {
+  margin-left: 5px;
+}
+
+.price-discount {
+  display: inline;
+  margin-left: 10px;
+}
+
+
+
+
 /*================ Slick Slider SCSS ================*/
 .slick-slider {
   position: relative;

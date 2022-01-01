@@ -209,10 +209,36 @@
               <div class="product-form__controls-group">
                 <div class="product-form__item">
                   <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-                  <input type="number" id="Quantity-{{ section.id }}"
+                  {% comment %} <input type="number" id="Quantity-{{ section.id }}"
                     name="quantity" value="1" min="1" pattern="[0-9]*"
                     class="product-form__input product-form__input--quantity" data-quantity-input
-                  >
+                  > {% endcomment %}
+                  <div class = 'quantity-1'>
+                    <input type =  "radio" id = "Quantity-{{ section.id }}" name = "quantity" value =1 >
+                    <label for = "Quantity-{{ section.id }}">1</label>
+                    <div class = 'price-discount'>
+                      <span class="price-item price-item--sale" data-sale-price="">
+                        €65,00 EUR
+                      </span>
+                      <s class="price-item price-item--regular" data-regular-price="">
+                          €95,00 EUR
+                      </s>
+                      <span class = "sale-price-tag">-32%</span>
+                    </div>
+                  </div>
+                  <div class = "quantity-2">
+                    <input type =  "radio" id = "Quantity-{{ section.id }}" name = "quantity" value =2 >
+                    <label for = "Quantity-{{ section.id }}">2</label>
+                    <div class = 'price-discount'>
+                      <span class="price-item price-item--sale" data-sale-price="">
+                        €78,00 EUR
+                      </span>
+                      <s class="price-item price-item--regular" data-regular-price="">
+                          €130,00 EUR
+                      </s>
+                      <span class = "sale-price-tag">-40%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             {% endif %}
